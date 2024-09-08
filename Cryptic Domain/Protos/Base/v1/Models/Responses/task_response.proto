@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+import "Base/v1/Models/Responses/error_model.proto";
+
+package cryptic.base.v1.models.responses;
+
+// [START csharp_declaration]
+option csharp_namespace = "Cryptic.Base.V1.Models.Responses";
+
+message TaskResponse {
+  bool success = 1;
+  base.v1.models.responses.ErrorModel error = 2;
+}
