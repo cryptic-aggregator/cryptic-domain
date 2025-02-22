@@ -2,7 +2,6 @@ syntax = "proto3";
 
 package cryptic.base.v1.models.responses;
 
-// [START csharp_declaration]
 option csharp_namespace = "Cryptic.Base.V1.Models.Responses";
 
 message ErrorModel {

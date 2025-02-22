@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package cryptic.blockchain_interaction.models.responses;
+
+
+message Coin {
+  string symbol = 1;
+  string balance = 2;
+}
+
+message GetWalletCoinsResponse {
+  repeated Coin coins = 1;
+}
