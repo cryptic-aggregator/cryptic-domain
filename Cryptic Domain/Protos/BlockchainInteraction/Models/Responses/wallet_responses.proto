@@ -1,5 +1,7 @@
 syntax = "proto3";
 
+import "Base/v1/Models/Responses/task_response.proto";
+
 package cryptic.blockchain_interaction.models.responses;
 
 
@@ -10,4 +12,5 @@ message Coin {
 
 message GetWalletCoinsResponse {
   repeated Coin coins = 1;
+  base.v1.models.responses.TaskResponse result = 2;
 }
