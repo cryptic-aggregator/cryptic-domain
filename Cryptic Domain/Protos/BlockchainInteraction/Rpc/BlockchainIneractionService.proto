@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+import "BlockchainInteraction/Models/Requests/wallet_requests.proto";
+import "BlockchainInteraction/Models/Responses/wallet_responses.proto";
+
+
+package cryptic.blockchain_interaction.rpc;
+
+
+service WalletService {
+  rpc GetWalletCoins(GetWalletCoinsRequest) returns (GetWalletCoinsResponse);
+}
