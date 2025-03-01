@@ -13,6 +13,7 @@ message Coin {
   string currentValue = 5;
   string priceChange1hPercent = 6;
   string changeSinceAvgPurchase = 7;
+  string image = 8;
 }
 
 message GetWalletCoinsResponse {
