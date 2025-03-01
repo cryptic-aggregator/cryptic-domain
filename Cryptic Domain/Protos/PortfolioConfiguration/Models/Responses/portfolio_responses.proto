@@ -1,6 +1,7 @@
 syntax = "proto3";
 
 import "Base/v1/Models/Responses/task_response.proto";
+import "BlockchainInteraction/Models/Responses/wallet_responses.proto";
 
 package cryptic.portfolio_configuration.models.responses;
 
@@ -34,4 +35,10 @@ message DeletePortfolioResponse {
 
 message ConnectWalletsResponse {
   repeated Wallet wallets = 1;
+}
+
+message GetPortfolioInfoResponse {
+  Portfolio portfolio = 1;
+  cryptic.blockchain_interaction.models.responses.GetWalletCoinsResponse wallet_info = 2;
+  base.v1.models.responses.TaskResponse result = 3;
 }
