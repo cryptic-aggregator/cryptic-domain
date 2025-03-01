@@ -11,6 +11,8 @@ message Coin {
   string avgPurchasePrice = 3;
   string currentMarketPrice = 4;
   string currentValue = 5;
+  string priceChange1hPercent = 6;
+  string changeSinceAvgPurchase = 7;
 }
 
 message GetWalletCoinsResponse {
