@@ -8,9 +8,13 @@ package cryptic.blockchain_interaction.models.responses;
 message Coin {
   string symbol = 1;
   string balance = 2;
+  string avgPurchasePrice = 3;
+  string currentMarketPrice = 4;
+  string currentValue = 5;
 }
 
 message GetWalletCoinsResponse {
   repeated Coin coins = 1;
-  base.v1.models.responses.TaskResponse result = 2;
+  string totalPortfolioValueUSDT = 2;
+  base.v1.models.responses.TaskResponse result = 3;
 }
