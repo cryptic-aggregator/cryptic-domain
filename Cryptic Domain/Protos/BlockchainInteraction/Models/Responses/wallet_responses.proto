@@ -4,7 +4,6 @@ import "Base/v1/Models/Responses/task_response.proto";
 
 package cryptic.blockchain_interaction.models.responses;
 
-
 message Coin {
   string symbol = 1;
   string balance = 2;
