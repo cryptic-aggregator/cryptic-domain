@@ -11,6 +11,13 @@ message Portfolio {
   int64 created_at = 4;
 }
 
+message Wallet {
+  int32 id = 1;
+  int32 portfolio_id = 2;
+  string wallet_address = 3;
+  int64 created_at = 4;
+}
+
 message GetPortfolioResponse {
   Portfolio portfolio = 1;
   base.v1.models.responses.TaskResponse result = 2;
@@ -23,4 +30,8 @@ message GetPortfoliosByOwnerResponse {
 
 message DeletePortfolioResponse {
   base.v1.models.responses.TaskResponse result = 1;
+}
+
+message ConnectWalletsResponse {
+  repeated Wallet wallets = 1;
 }

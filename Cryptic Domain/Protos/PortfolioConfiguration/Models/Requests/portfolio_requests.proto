@@ -27,3 +27,9 @@ message DeletePortfolioRequest {
   int32 id = 1;
   int32 owner_id = 2;
 }
+
+message ConnectWalletsRequest {
+  int32 portfolio_id = 1;
+  int32 owner_id = 2;
+  repeated string wallet_addresses = 3;
+}

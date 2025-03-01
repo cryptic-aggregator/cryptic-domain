@@ -12,4 +12,5 @@ service PortfolioService {
   rpc GetPortfoliosByOwner(models.requests.GetPortfoliosByOwnerRequest) returns (models.responses.GetPortfoliosByOwnerResponse);
   rpc UpdatePortfolio(models.requests.UpdatePortfolioRequest) returns (models.responses.GetPortfolioResponse);
   rpc DeletePortfolio(models.requests.DeletePortfolioRequest) returns (models.responses.DeletePortfolioResponse);
+  rpc ConnectWallets(models.requests.ConnectWalletsRequest) returns (models.responses.ConnectWalletsResponse);
 }
