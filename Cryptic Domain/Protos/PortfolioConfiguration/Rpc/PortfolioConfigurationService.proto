@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+import "PortfolioConfiguration/Models/Requests/portfolio_requests.proto";
+import "PortfolioConfiguration/Models/Responses/portfolio_responses.proto";
+
+
+package cryptic.portfolio_configuration.rpc;
+
+service PortfolioService {
+  rpc CreatePortfolio(models.requests.CreatePortfolioRequest) returns (models.responses.GetPortfolioResponse);
+  rpc GetPortfolio(models.requests.GetPortfolioRequest) returns (models.responses.GetPortfolioResponse);
+  rpc GetPortfoliosByOwner(models.requests.GetPortfoliosByOwnerRequest) returns (models.responses.GetPortfoliosByOwnerResponse);
+  rpc UpdatePortfolio(models.requests.UpdatePortfolioRequest) returns (models.responses.GetPortfolioResponse);
+  rpc DeletePortfolio(models.requests.DeletePortfolioRequest) returns (models.responses.DeletePortfolioResponse);
+}

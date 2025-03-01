@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+import "Base/v1/Models/Responses/task_response.proto";
+
+package cryptic.portfolio_configuration.models.responses;
+
+message Portfolio {
+  int32 id = 1;
+  string name = 2;
+  int32 owner_id = 3;
+  int64 created_at = 4;
+}
+
+message GetPortfolioResponse {
+  Portfolio portfolio = 1;
+  base.v1.models.responses.TaskResponse result = 2;
+}
+
+message GetPortfoliosByOwnerResponse {
+  repeated Portfolio portfolios = 1;
+  base.v1.models.responses.TaskResponse result = 2;
+}
+
+message DeletePortfolioResponse {
+  base.v1.models.responses.TaskResponse result = 1;
+}
