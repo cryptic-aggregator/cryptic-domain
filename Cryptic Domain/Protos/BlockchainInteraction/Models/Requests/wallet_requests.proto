@@ -5,4 +5,5 @@ package cryptic.blockchain_interaction.models.requests;
 
 message GetWalletCoinsRequest {
   repeated string address = 1;
+  int32 portfolioId = 2;
 }
