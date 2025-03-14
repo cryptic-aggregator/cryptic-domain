@@ -18,6 +18,7 @@ message Wallet {
   string wallet_address = 3;
   int64 created_at = 4;
   int64 connection_type = 5;
+  int32 visibility = 6;
 }
 
 message GetPortfolioResponse {
@@ -46,4 +47,9 @@ message GetPortfolioInfoResponse {
 
 message PatchWalletVisibilityResponse {
   base.v1.models.responses.TaskResponse result = 1;
+}
+
+message GetWalletsByPortfolioIdResponse {
+  repeated Wallet wallets = 1;
+  base.v1.models.responses.TaskResponse result = 2;
 }

@@ -45,3 +45,7 @@ message PatchWalletVisibilityRequest {
   int32 wallet_id = 2;
   int32 visibility = 3;
 }
+
+message GetWalletsByPortfolioIdRequest {
+  int32 portfolio_id = 1;
+}
