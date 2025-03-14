@@ -43,3 +43,7 @@ message GetPortfolioInfoResponse {
   cryptic.blockchain_interaction.models.responses.GetWalletCoinsResponse wallet_info = 2;
   base.v1.models.responses.TaskResponse result = 3;
 }
+
+message PatchWalletVisibilityResponse {
+  base.v1.models.responses.TaskResponse result = 1;
+}
