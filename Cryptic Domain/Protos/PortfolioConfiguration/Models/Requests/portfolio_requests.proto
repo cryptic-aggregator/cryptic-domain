@@ -31,7 +31,8 @@ message DeletePortfolioRequest {
 message ConnectWalletsRequest {
   int32 portfolio_id = 1;
   int32 owner_id = 2;
-  repeated string wallet_addresses = 3;
+  int32 connection_type = 3;
+  repeated string wallet_addresses = 4;
 }
 
 message GetPortfolioInfoRequest {

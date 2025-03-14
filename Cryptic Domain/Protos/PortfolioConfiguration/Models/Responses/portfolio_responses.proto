@@ -17,6 +17,7 @@ message Wallet {
   int32 portfolio_id = 2;
   string wallet_address = 3;
   int64 created_at = 4;
+  int64 connection_type = 5;
 }
 
 message GetPortfolioResponse {
