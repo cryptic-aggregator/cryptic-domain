@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package cryptic.portfolio_analytic.models.responses;
+
+message WalletCoinResult {
+  string symbol = 1;
+  string image = 2;
+  string dollarValue = 3;
+  string percentage = 4;
+}
+
+message CalculateWalletResponse {
+  repeated WalletCoinResult walletCoins = 1;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "BlockchainInteraction/Models/Responses/wallet_responses.proto";
+
+package cryptic.portfolio_analytic.models.requests;
+
+message CalculateWalletRequest {
+  blockchain_interaction.models.responses.GetWalletCoinsResponse walletResponse = 1;
+}
