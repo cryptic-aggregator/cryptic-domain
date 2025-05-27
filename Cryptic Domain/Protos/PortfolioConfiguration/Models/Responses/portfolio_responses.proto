@@ -20,9 +20,9 @@ message Wallet {
   int64 created_at = 4;
   int64 connection_type = 5;
   int32 visibility = 6;
-  string name = 7;
-  string caip_address = 8;
-  string connector = 9;
+  optional string name = 7;
+  optional string caip_address = 8;
+  optional string connector = 9;
 }
 
 message GetPortfolioResponse {
