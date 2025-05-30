@@ -21,3 +21,16 @@ message GetWalletCoinsResponse {
   string totalPortfolioValueUSDT = 2;
   base.v1.models.responses.TaskResponse result = 3;
 }
+
+message Transaction {
+  string transactionHash = 1;
+  string tokenAddress    = 2;
+  string amount          = 3;
+  int64  ts              = 4;  // UNIX timestamp (seconds)
+  int32  transactionType = 5;  // 0 = incoming, 1 = outgoing
+}
+
+message GetWalletTransactionsResponse {
+  repeated Transaction transactions = 1;
+  base.v1.models.responses.TaskResponse result = 2;
+}
