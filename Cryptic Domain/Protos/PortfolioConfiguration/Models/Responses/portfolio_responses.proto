@@ -2,6 +2,7 @@ syntax = "proto3";
 
 import "Base/v1/Models/Responses/task_response.proto";
 import "BlockchainInteraction/Models/Responses/wallet_responses.proto";
+import "PortfolioAnalytic/Models/Responses/analytic_responses.proto";
 
 package cryptic.portfolio_configuration.models.responses;
 
@@ -17,6 +18,11 @@ message Wallet {
   int32 portfolio_id = 2;
   string wallet_address = 3;
   int64 created_at = 4;
+  int64 connection_type = 5;
+  int32 visibility = 6;
+  optional string name = 7;
+  optional string caip_address = 8;
+  optional string connector = 9;
 }
 
 message GetPortfolioResponse {
@@ -40,5 +46,20 @@ message ConnectWalletsResponse {
 message GetPortfolioInfoResponse {
   Portfolio portfolio = 1;
   cryptic.blockchain_interaction.models.responses.GetWalletCoinsResponse wallet_info = 2;
+  base.v1.models.responses.TaskResponse result = 3;
+}
+
+message PatchWalletVisibilityResponse {
+  base.v1.models.responses.TaskResponse result = 1;
+}
+
+message GetWalletsByPortfolioIdResponse {
+  repeated Wallet wallets = 1;
+  base.v1.models.responses.TaskResponse result = 2;
+}
+
+message GetPortfolioCalculationResponse {
+  Portfolio portfolio = 1;
+  repeated portfolio_analytic.models.responses.WalletCoinResult calculatedCoins = 2;
   base.v1.models.responses.TaskResponse result = 3;
 }

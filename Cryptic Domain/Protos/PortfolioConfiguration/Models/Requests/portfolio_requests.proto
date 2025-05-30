@@ -10,6 +10,10 @@ message CreatePortfolioRequest {
   int64 created_at = 3;
 }
 
+message GetPortfolioCalculationRequest {
+  int32 portfolioId = 1;
+}
+
 message GetPortfolioRequest {
   int32 id = 1;
   int32 owner_id = 2;
@@ -31,10 +35,29 @@ message DeletePortfolioRequest {
 message ConnectWalletsRequest {
   int32 portfolio_id = 1;
   int32 owner_id = 2;
-  repeated string wallet_addresses = 3;
+  repeated WalletConnectEntity wallets = 3;
 }
+
+message WalletConnectEntity{
+  string name = 1;
+  string caip_address = 2;
+  string connector = 3;
+  int32 connection_type = 4;
+  string wallet_address = 5;
+}
+
 
 message GetPortfolioInfoRequest {
   int32 portfolio_id = 1;
   int32 owner_id = 2;
+}
+
+message PatchWalletVisibilityRequest {
+  int32 portfolio_id = 1;
+  int32 wallet_id = 2;
+  int32 visibility = 3;
+}
+
+message GetWalletsByPortfolioIdRequest {
+  int32 portfolio_id = 1;
 }
