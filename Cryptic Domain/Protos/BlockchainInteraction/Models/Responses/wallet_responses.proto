@@ -23,11 +23,20 @@ message GetWalletCoinsResponse {
 }
 
 message Transaction {
-  string transactionHash = 1;
-  string tokenAddress    = 2;
-  string amount          = 3;
-  int64  ts              = 4;  // UNIX timestamp (seconds)
-  int32  transactionType = 5;  // 0 = incoming, 1 = outgoing
+  string transactionHash = 1;   // хеш транзакції
+  string tokenAddress = 2;   // mint‐адреса або "SOL"
+  string amount = 3;   // людяче представлення суми, наприклад "0.1234"
+  int64  ts = 4;   // UNIX‐час у секундах
+  int32  transactionType = 5;   // 0 = incoming, 1 = outgoing
+
+  // --- Додаткові поля ---
+  string fromAddress = 6;   // звідки пішла транзакція
+  string toAddress = 7;   // куди пішла транзакція
+  string chain = 8;   // мережа, наприклад "sol" або "eth"
+
+  // --- Необов’язкові (можна за бажанням) ---
+  string symbol = 9;   // символ токена (USDC, SOL, тощо)
+  string logo = 10;
 }
 
 message GetWalletTransactionsResponse {
