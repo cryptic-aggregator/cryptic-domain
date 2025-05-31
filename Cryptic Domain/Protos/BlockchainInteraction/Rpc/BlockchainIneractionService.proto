@@ -14,3 +14,8 @@ service WalletService {
 service TransactionService {
   rpc GetWalletTransactions(models.requests.GetWalletTransactionsRequest) returns (models.responses.GetWalletTransactionsResponse);
 }
+
+service TokenPriceService {
+  rpc GetCurrentPrice  (models.requests.GetCurrentPriceRequest)  returns (models.responses.GetCurrentPriceResponse);
+  rpc GetPriceHistory  (models.requests.GetPriceHistoryRequest)  returns (models.responses.GetPriceHistoryResponse);
+}

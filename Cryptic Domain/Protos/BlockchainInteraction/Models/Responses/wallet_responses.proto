@@ -42,3 +42,17 @@ message GetWalletTransactionsResponse {
   repeated Transaction transactions = 1;
   base.v1.models.responses.TaskResponse result = 2;
 }
+
+message PricePoint {
+  int64  ts    = 1;
+  string price = 2;
+}
+
+message GetPriceHistoryResponse {
+  repeated PricePoint prices = 1;
+}
+
+message GetCurrentPriceResponse {
+  string price = 1;
+  int64  ts    = 2;
+}
