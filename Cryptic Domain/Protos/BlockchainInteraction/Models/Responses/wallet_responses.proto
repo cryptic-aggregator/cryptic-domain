@@ -21,3 +21,38 @@ message GetWalletCoinsResponse {
   string totalPortfolioValueUSDT = 2;
   base.v1.models.responses.TaskResponse result = 3;
 }
+
+message Transaction {
+  string transactionHash = 1;
+  string tokenAddress = 2;
+  string amount = 3;
+  int64  ts = 4;
+  int32  transactionType = 5;
+
+  string fromAddress = 6;
+  string toAddress = 7;
+  string chain = 8;
+
+  string symbol = 9;
+  string logo = 10;
+  string token_name = 11;
+}
+
+message GetWalletTransactionsResponse {
+  repeated Transaction transactions = 1;
+  base.v1.models.responses.TaskResponse result = 2;
+}
+
+message PricePoint {
+  int64  ts    = 1;
+  string price = 2;
+}
+
+message GetPriceHistoryResponse {
+  repeated PricePoint prices = 1;
+}
+
+message GetCurrentPriceResponse {
+  string price = 1;
+  int64  ts    = 2;
+}

@@ -10,3 +10,12 @@ package cryptic.blockchain_interaction.rpc;
 service WalletService {
   rpc GetWalletCoins(models.requests.GetWalletCoinsRequest) returns (models.responses.GetWalletCoinsResponse);
 }
+
+service TransactionService {
+  rpc GetWalletTransactions(models.requests.GetWalletTransactionsRequest) returns (models.responses.GetWalletTransactionsResponse);
+}
+
+service TokenPriceService {
+  rpc GetCurrentPrice  (models.requests.GetCurrentPriceRequest)  returns (models.responses.GetCurrentPriceResponse);
+  rpc GetPriceHistory  (models.requests.GetPriceHistoryRequest)  returns (models.responses.GetPriceHistoryResponse);
+}
