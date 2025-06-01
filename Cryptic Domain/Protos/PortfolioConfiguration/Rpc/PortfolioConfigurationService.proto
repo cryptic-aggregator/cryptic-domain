@@ -17,4 +17,6 @@ service PortfolioService {
   rpc PatchWalletVisibility (cryptic.portfolio_configuration.models.requests.PatchWalletVisibilityRequest) returns (cryptic.portfolio_configuration.models.responses.PatchWalletVisibilityResponse);
   rpc GetWalletsByPortfolioId (cryptic.portfolio_configuration.models.requests.GetWalletsByPortfolioIdRequest) returns (cryptic.portfolio_configuration.models.responses.GetWalletsByPortfolioIdResponse);
   rpc GetPortfolioCalculation(cryptic.portfolio_configuration.models.requests.GetPortfolioCalculationRequest)returns (cryptic.portfolio_configuration.models.responses.GetPortfolioCalculationResponse);
+  rpc GetPortfolioTransactions(cryptic.portfolio_configuration.models.requests.GetPortfolioTransactionsRequest)returns (cryptic.portfolio_configuration.models.responses.GetPortfolioTransactionsResponse);
 }
+
