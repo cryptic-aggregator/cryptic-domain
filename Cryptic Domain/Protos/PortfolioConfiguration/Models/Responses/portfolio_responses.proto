@@ -23,6 +23,7 @@ message Wallet {
   optional string name = 7;
   optional string caip_address = 8;
   optional string connector = 9;
+  string network = 10;
 }
 
 message GetPortfolioResponse {
@@ -43,9 +44,8 @@ message ConnectWalletsResponse {
   repeated Wallet wallets = 1;
 }
 message WalletWithCoins {
-  int32 walletId = 1;
-  string walletAddress = 2;
-  repeated cryptic.blockchain_interaction.models.responses.Coin coins = 3;
+  Wallet wallet = 1;
+  repeated cryptic.blockchain_interaction.models.responses.Coin coins = 2;
 }
 
 message GetPortfolioWalletsInfoResponse {
