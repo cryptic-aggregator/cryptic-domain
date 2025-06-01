@@ -24,3 +24,7 @@ message GetPriceHistoryRequest {
   int64  to_ts   = 3;
 }
 
+    message GetWalletCoinsByAddressRequest {
+      string address = 1;
+      int32 portfolioId = 2;
+    }

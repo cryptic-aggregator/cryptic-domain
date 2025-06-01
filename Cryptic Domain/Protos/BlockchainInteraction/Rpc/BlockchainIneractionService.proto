@@ -9,6 +9,7 @@ package cryptic.blockchain_interaction.rpc;
 
 service WalletService {
   rpc GetWalletCoins(models.requests.GetWalletCoinsRequest) returns (models.responses.GetWalletCoinsResponse);
+  rpc GetWalletCoinsByAddress(models.requests.GetWalletCoinsByAddressRequest) returns (models.responses.GetWalletCoinsResponse);
 }
 
 service TransactionService {
