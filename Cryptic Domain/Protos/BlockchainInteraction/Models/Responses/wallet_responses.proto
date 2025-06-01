@@ -56,3 +56,9 @@ message GetCurrentPriceResponse {
   string price = 1;
   int64  ts    = 2;
 }
+
+message WalletWithCoins {
+  int32 walletId = 1;
+  string walletAddress = 2;
+  repeated Coin coins = 3;
+}

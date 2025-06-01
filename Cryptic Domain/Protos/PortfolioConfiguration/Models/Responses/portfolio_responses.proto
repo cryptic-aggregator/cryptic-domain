@@ -42,6 +42,17 @@ message DeletePortfolioResponse {
 message ConnectWalletsResponse {
   repeated Wallet wallets = 1;
 }
+message WalletWithCoins {
+  int32 walletId = 1;
+  string walletAddress = 2;
+  repeated cryptic.blockchain_interaction.models.responses.Coin coins = 3;
+}
+
+message GetPortfolioWalletsInfoResponse {
+  Portfolio portfolio = 1;
+  repeated WalletWithCoins walletInfo = 2;
+  base.v1.models.responses.TaskResponse result = 3;
+}
 
 message GetPortfolioInfoResponse {
   Portfolio portfolio = 1;
