@@ -7,3 +7,29 @@ package cryptic.portfolio_analytic.models.requests;
 message CalculateWalletRequest {
   blockchain_interaction.models.responses.GetWalletCoinsResponse walletResponse = 1;
 }
+
+message WalletQuery {
+  int32 walletId = 1;       // Ідентифікатор гаманця в нашій БД
+  string walletAddress = 2; // Адреса гаманця (можна зберегти або проігнорувати, залежно від бізнес-логіки)
+}
+
+// Запит до методу GetWalletTransactions
+message GetWalletTransactionsRequest {
+  repeated WalletQuery wallets = 1;       // Список гаманців, по яких треба шукати
+  int32 page = 2;                         // Номер сторінки (1-based)
+  int32 perPage = 3;                      // Кількість записів на сторінку
+  TransactionTypeFilter transactionType = 4; // Фільтр за типом транзакції (ALL/INCOMING/OUTGOING), за замовчуванням ALL
+  DateRange dateRange = 5;                // Діапазон дат (опціонально; якщо null – без фільтра за датами)
+}
+
+enum TransactionTypeFilter {
+  ALL = 0;
+  INCOMING = 1;
+  OUTGOING = 2;
+}
+
+message DateRange {
+  int64 from = 1;
+  int64 to = 2;
+}
+

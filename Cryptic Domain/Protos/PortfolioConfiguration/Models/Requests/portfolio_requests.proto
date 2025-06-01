@@ -1,6 +1,7 @@
 syntax = "proto3";
 
 import "PortfolioConfiguration/Models/Responses/portfolio_responses.proto";
+import "PortfolioAnalytic/Models/Requests/analytic_requests.proto";
 
 package cryptic.portfolio_configuration.models.requests;
 
@@ -46,7 +47,6 @@ message WalletConnectEntity{
   string wallet_address = 5;
 }
 
-
 message GetPortfolioInfoRequest {
   int32 portfolio_id = 1;
   int32 owner_id = 2;
@@ -60,4 +60,13 @@ message PatchWalletVisibilityRequest {
 
 message GetWalletsByPortfolioIdRequest {
   int32 portfolio_id = 1;
+}
+
+message GetPortfolioTransactionsRequest {
+  int32 portfolioId = 1;
+
+  int32 page = 2;
+  int32 perPage = 3;
+  portfolio_analytic.models.requests.TransactionTypeFilter transactionType = 4;
+  portfolio_analytic.models.requests.DateRange dateRange = 5;
 }

@@ -12,3 +12,36 @@ message WalletCoinResult {
 message CalculateWalletResponse {
   repeated WalletCoinResult walletCoins = 1;
 }
+
+
+message TokenInfo {
+  int32 tokenId = 1;   // ID токена
+  string symbol = 2;   // символ (наприклад, "ETH")
+  string name = 3;   // назва (наприклад, "Ethereum")
+  string logoUri = 4;   // URI до логотипу токена
+  string lastPrice = 5;  // остання зафіксована ціна (decimal → string)
+}
+
+// ◈ Один запис транзакції
+message Transaction {
+  int64 transactionId = 1;
+  int32 walletId = 2;
+  TokenInfo token = 3;
+  string transactionHash = 4;
+  string fromAddress = 5;
+  string toAddress = 6;
+  string amount = 7;
+  int64 timestamp = 8; // Unix epoch seconds → Timestamp
+  int32 transactionType = 9;   // 0 or 1
+  string chain = 10;
+
+  string fee = 11;   // хардкодена плата (як рядок)
+  int32 status = 12;   // хардкодений статус (наприклад, 0 = Pending, 1 = Confirmed)
+}
+
+message GetWalletTransactionsResponse {
+  repeated Transaction transactions = 1;
+  int32 total = 2;  // загальна кількість (після фільтрів, без пагінації)
+  int32 page = 3;  // echo
+  int32 perPage = 4;  // echo
+}
