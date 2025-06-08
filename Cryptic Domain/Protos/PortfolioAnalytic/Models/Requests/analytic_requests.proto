@@ -19,6 +19,7 @@ message GetWalletTransactionsRequest {
   int32 perPage = 3;
   TransactionTypeFilter transactionType = 4;
   DateRange dateRange = 5;
+  string search = 6;
 }
 
 message GetPortfolioVsTokenPointsRequest {

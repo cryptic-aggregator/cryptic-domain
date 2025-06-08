@@ -64,11 +64,11 @@ message GetWalletsByPortfolioIdRequest {
 
 message GetPortfolioTransactionsRequest {
   int32 portfolioId = 1;
-
   int32 page = 2;
   int32 perPage = 3;
   portfolio_analytic.models.requests.TransactionTypeFilter transactionType = 4;
   portfolio_analytic.models.requests.DateRange dateRange = 5;
+  string search = 6;
 }
 
 message GetPortfolioCorrelationRequest {
