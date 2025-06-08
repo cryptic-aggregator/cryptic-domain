@@ -60,6 +60,8 @@ message PatchWalletVisibilityRequest {
 
 message GetWalletsByPortfolioIdRequest {
   int32 portfolio_id = 1;
+  optional string search = 2;
+  repeated string networks = 3;
 }
 
 message GetPortfolioTransactionsRequest {
