@@ -70,3 +70,12 @@ message GetPortfolioTransactionsRequest {
   portfolio_analytic.models.requests.TransactionTypeFilter transactionType = 4;
   portfolio_analytic.models.requests.DateRange dateRange = 5;
 }
+
+message GetPortfolioCorrelationRequest {
+  string token_symbol = 1;
+  int32 portfolio_id = 2;
+  int64 from_ts = 3;
+  int64 to_ts = 4;
+  int32 points_count = 5;
+  int32 currency = 6;
+}

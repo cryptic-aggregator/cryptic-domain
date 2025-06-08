@@ -82,3 +82,4 @@ message GetPortfolioTransactionsResponse {
   int32 page = 4;
   int32 perPage = 5;
 }
+

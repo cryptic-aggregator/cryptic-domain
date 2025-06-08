@@ -9,17 +9,24 @@ message CalculateWalletRequest {
 }
 
 message WalletQuery {
-  int32 walletId = 1;       // Ідентифікатор гаманця в нашій БД
-  string walletAddress = 2; // Адреса гаманця (можна зберегти або проігнорувати, залежно від бізнес-логіки)
+  int32 walletId = 1;
+  string walletAddress = 2;
 }
 
-// Запит до методу GetWalletTransactions
 message GetWalletTransactionsRequest {
-  repeated WalletQuery wallets = 1;       // Список гаманців, по яких треба шукати
-  int32 page = 2;                         // Номер сторінки (1-based)
-  int32 perPage = 3;                      // Кількість записів на сторінку
-  TransactionTypeFilter transactionType = 4; // Фільтр за типом транзакції (ALL/INCOMING/OUTGOING), за замовчуванням ALL
-  DateRange dateRange = 5;                // Діапазон дат (опціонально; якщо null – без фільтра за датами)
+  repeated WalletQuery wallets = 1;
+  int32 page = 2;
+  int32 perPage = 3;
+  TransactionTypeFilter transactionType = 4;
+  DateRange dateRange = 5;
+}
+
+message GetPortfolioVsTokenPointsRequest {
+  repeated int32 wallet_ids = 1;
+  string token_symbol = 2;
+  int64 from_ts = 3;
+  int64 to_ts = 4;
+  int32 points_count = 5;
 }
 
 enum TransactionTypeFilter {
@@ -32,4 +39,5 @@ message DateRange {
   int64 from = 1;
   int64 to = 2;
 }
+
 

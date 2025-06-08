@@ -2,6 +2,7 @@ syntax = "proto3";
 
 import "PortfolioConfiguration/Models/Requests/portfolio_requests.proto";
 import "PortfolioConfiguration/Models/Responses/portfolio_responses.proto";
+import "PortfolioAnalytic/Models/Responses/analytic_responses.proto";
 
 
 package cryptic.portfolio_configuration.rpc;
@@ -19,5 +20,10 @@ service PortfolioService {
   rpc GetPortfolioCalculation(cryptic.portfolio_configuration.models.requests.GetPortfolioCalculationRequest)returns (cryptic.portfolio_configuration.models.responses.GetPortfolioCalculationResponse);
   rpc GetPortfolioTransactions(cryptic.portfolio_configuration.models.requests.GetPortfolioTransactionsRequest)returns (cryptic.portfolio_configuration.models.responses.GetPortfolioTransactionsResponse);
   rpc GetPortfolioWalletsInfo(cryptic.portfolio_configuration.models.requests.GetPortfolioInfoRequest) returns (cryptic.portfolio_configuration.models.responses.GetPortfolioWalletsInfoResponse);
+  rpc GetPortfolioCorrelation(
+  cryptic.portfolio_configuration.models.requests.GetPortfolioCorrelationRequest
+      ) returns (
+  cryptic.portfolio_analytic.models.responses.GetPortfolioCorrelationResponse
+      );
 }
 
