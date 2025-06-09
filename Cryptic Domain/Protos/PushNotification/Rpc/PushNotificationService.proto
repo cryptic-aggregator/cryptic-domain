@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+import "PushNotification/Models/Requests/push_requests.proto";
+import "PushNotification/Models/Responses/push_responses.proto";
+
+
+package cryptic.push_notification.rpc;
+
+service PushNotificationService {
+  rpc SendPushNotification(cryptic.push_notification.models.requests.SendPushNotificationRequests) returns (cryptic.push_notification.models.responses.SendPushNotificationResponses);
+}
