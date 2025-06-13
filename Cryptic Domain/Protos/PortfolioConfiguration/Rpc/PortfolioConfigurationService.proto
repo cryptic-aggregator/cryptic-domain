@@ -25,5 +25,6 @@ service PortfolioService {
       ) returns (
   cryptic.portfolio_analytic.models.responses.GetPortfolioCorrelationResponse
       );
+  rpc DeleteWallet(cryptic.portfolio_configuration.models.requests.DeleteWalletRequest) returns (cryptic.portfolio_configuration.models.responses.DeleteWalletResponse);
 }
 

@@ -64,6 +64,10 @@ message PatchWalletVisibilityResponse {
   base.v1.models.responses.TaskResponse result = 1;
 }
 
+message DeleteWalletResponse {
+  base.v1.models.responses.TaskResponse result = 1;
+}
+
 message GetWalletsByPortfolioIdResponse {
   repeated Wallet wallets = 1;
   base.v1.models.responses.TaskResponse result = 2;
