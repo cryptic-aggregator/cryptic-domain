@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+import "Base/v1/Models/Responses/task_response.proto";
+//import "PushNotification/Models/Requests/push_requests.proto";
+
+package cryptic.push_notification.models.responses;
+
+message SendPushNotificationResponses {
+  string msg = 1;
+}
