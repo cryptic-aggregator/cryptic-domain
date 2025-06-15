@@ -50,6 +50,8 @@ message WalletConnectEntity{
 message GetPortfolioInfoRequest {
   int32 portfolio_id = 1;
   int32 owner_id = 2;
+  int64 from_ts = 3;
+  int64 to_ts = 4;
 }
 
 message PatchWalletVisibilityRequest {
@@ -60,8 +62,8 @@ message PatchWalletVisibilityRequest {
 
 message DeleteWalletRequest {
   int32 portfolio_id = 1;
-  int32 wallet_id    = 2;
-  int32 owner_id     = 3;
+  int32 wallet_id = 2;
+  int32 owner_id = 3;
 }
 
 

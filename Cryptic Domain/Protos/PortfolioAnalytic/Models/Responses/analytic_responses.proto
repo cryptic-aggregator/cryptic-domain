@@ -71,3 +71,13 @@ message GetPortfolioPnlPointsResponse {
   repeated PnlPoint points = 1;
   base.v1.models.responses.TaskResponse result = 2;
 }
+
+message BalancePoint {
+  int64 ts = 1;
+  double balance = 2;
+}
+
+message GetPortfolioBalancePointsResponse {
+  repeated BalancePoint points = 1;
+  base.v1.models.responses.TaskResponse result = 2;
+}
