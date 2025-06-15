@@ -20,10 +20,10 @@ service PortfolioService {
   rpc GetPortfolioCalculation(cryptic.portfolio_configuration.models.requests.GetPortfolioCalculationRequest)returns (cryptic.portfolio_configuration.models.responses.GetPortfolioCalculationResponse);
   rpc GetPortfolioTransactions(cryptic.portfolio_configuration.models.requests.GetPortfolioTransactionsRequest)returns (cryptic.portfolio_configuration.models.responses.GetPortfolioTransactionsResponse);
   rpc GetPortfolioWalletsInfo(cryptic.portfolio_configuration.models.requests.GetPortfolioInfoRequest) returns (cryptic.portfolio_configuration.models.responses.GetPortfolioWalletsInfoResponse);
-  rpc GetPortfolioCorrelation(
-  cryptic.portfolio_configuration.models.requests.GetPortfolioCorrelationRequest
-      ) returns (
-  cryptic.portfolio_analytic.models.responses.GetPortfolioCorrelationResponse
-      );
+  rpc GetPortfolioCorrelation(cryptic.portfolio_configuration.models.requests.GetPortfolioCorrelationRequest) returns (cryptic.portfolio_analytic.models.responses.GetPortfolioCorrelationResponse);
+  rpc GetPortfolioPnlPoints(cryptic.portfolio_configuration.models.requests.GetPortfolioPnlPointsRequest) returns (cryptic.portfolio_analytic.models.responses.GetPortfolioPnlPointsResponse);
+  
+  
+  
 }
 

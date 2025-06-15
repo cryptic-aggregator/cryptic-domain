@@ -10,6 +10,7 @@ package cryptic.portfolio_analytic.rpc;
 service PortfolioAnalyticService {
   rpc GetAssetAllocations(models.requests.CalculateWalletRequest) returns (models.responses.CalculateWalletResponse);
   rpc GetPortfolioVsTokenPoints(models.requests.GetPortfolioVsTokenPointsRequest)returns (models.responses.GetPortfolioCorrelationResponse);
+  rpc GetPortfolioPnlPoints(models.requests.GetPortfolioPnlPointsRequest) returns (models.responses.GetPortfolioPnlPointsResponse);
 }
 
 service AnalyticTransactionService {

@@ -59,3 +59,15 @@ message GetPortfolioCorrelationResponse {
   repeated PortfolioCorrelationPoint points = 1;
   base.v1.models.responses.TaskResponse result = 3;
 }
+
+message PnlPoint {
+  int64 ts = 1;
+  double profit = 2;
+  double loss = 3;
+}
+
+
+message GetPortfolioPnlPointsResponse {
+  repeated PnlPoint points = 1;
+  base.v1.models.responses.TaskResponse result = 2;
+}
