@@ -22,8 +22,6 @@ service PortfolioService {
   rpc GetPortfolioWalletsInfo(cryptic.portfolio_configuration.models.requests.GetPortfolioInfoRequest) returns (cryptic.portfolio_configuration.models.responses.GetPortfolioWalletsInfoResponse);
   rpc GetPortfolioCorrelation(cryptic.portfolio_configuration.models.requests.GetPortfolioCorrelationRequest) returns (cryptic.portfolio_analytic.models.responses.GetPortfolioCorrelationResponse);
   rpc GetPortfolioPnlPoints(cryptic.portfolio_configuration.models.requests.GetPortfolioPnlPointsRequest) returns (cryptic.portfolio_analytic.models.responses.GetPortfolioPnlPointsResponse);
-  
-  
-  
+  rpc DeleteWallet(cryptic.portfolio_configuration.models.requests.DeleteWalletRequest) returns (cryptic.portfolio_configuration.models.responses.DeleteWalletResponse);
 }
 
